@@ -1,0 +1,60 @@
+CSS Step Menu
+=============
+
+What is it?
+-----------
+
+A basic step menu implementation using CSS, based on Code Lindley CSS Step Menu implementation (http://codylindley.com/blogstuff/css/stepmenu/)
+
+CSS Step Menu gives you 4 states for steps menu design:
+ . Not visited
+ . Current step
+ . Last done
+ . Done
+
+And gives you 4 options of steps size:
+ . Five steps - divide li items into 5 steps (<ul ... class='stepNavigation fiveStep'>)
+ . Four steps - divide li items into 4 steps (<ul ... class='stepNavigation fourStep'>)
+ . Three steps - divide li items into 3 steps (<ul ... class='stepNavigation threeStep'>)
+ . Two steps - divide li items into 2 steps (<ul ... class='stepNavigation twoStep'>)
+
+How to use it?
+--------------
+
+CSS Step Menu is based on an Unordened List (ul) to create steps menu.
+
+Add the steps.css to your page adding to your pages header something like:
+
+  <link rel="stylesheet" type="text/css" href="steps.css" />
+
+And at your ul element that will be a steped navigation you should add a class: stepNavigation and set the number of steps using classes like: fiveStep, fourStep, etc.
+
+List item elements (li) inside of create ul should declare the step state using classes. Available steps states options are: current, done, lastDone.
+Empty class li will set step like not visited.
+
+DOM structure
+-------------
+
+. Unordened list (ul)
+  . ul element should have the class stepNavigation to declare that it is a steped menu;
+  . ul element should declare steps quantity using classes like twoStep, threeStep, fourStep and fiveStep (defaults values).
+. List items (li)
+  . Not visited step is the default;
+  . Current step - class='current';
+  . Last done step - class='lastDone';
+  . Done step - class='done';
+  . Last step of the list should have a class='lastStep'.
+  . em element describes step's title
+  . span element describes step's description
+
+Code sample
+-----------
+
+Four steps menu sample:
+
+<ul class="stepNavigation fourStep">
+    <li class="done"><a href="/" title=""><em>Step 1: Done step</em><span>Et nequ a quam turpis duisi</span></a></li>
+    <li class="lastDone"><a href="/" title=""><em>Step 2: Last done step</em><span>Et nequ a quam turpis duisi</span></a></li>
+    <li class="current"><a title=""><em>Step 3: Current step</em><span>Et nequ a quam turpis duisi</span></a></li>
+    <li class="lastStep"><a title=""><em>Step 4: Not visited step</em><span>Et nequ a quam turpis duisi</span></a></li>
+</ul>
